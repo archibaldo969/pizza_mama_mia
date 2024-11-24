@@ -1,0 +1,548 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000000, #5c0000);
+    color: #fff;
+}
+
+header {
+    background: linear-gradient(to right, #630c0c, #c70404);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background-image: url(https://fons.pibig.info/uploads/posts/2023-05/1685374919_fons-pibig-info-p-fon-dlya-pitstserii-vkontakte-11.jpg);
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.youtube-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ширина на весь экран */
+    height: 100vh; /* Высота на весь экран */
+    pointer-events: none; /* Чтобы пользователи не могли взаимодействовать с видео */
+}
+
+.hero {
+    position: relative;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.hero-content {
+    z-index: 1; /* Контент поверх видео */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hero-button {
+    background-color: #ff8b13;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 23px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #FF4500;
+    transform: scale(1.1);
+}
+
+
+h1 {
+    font-size: 36px;
+}
+
+/* Стили для плавающего меню */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Белый с прозрачностью */
+    text-align: center;
+    padding: 10px 13px;
+    position: fixed; /* Фиксируем меню */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    width: 75%; /* Рентабельная ширина */
+    border-radius: 37px; /* Закругляем края */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Добавляем легкую тень */
+    z-index: 1000; /* Меню всегда наверху */
+    font-size: 18px;
+}
+nav .logo img {
+    padding-top: 10px;
+    height: 60px; /* Увеличиваем высоту логотипа */
+    object-fit: contain; /* Сохраняем пропорции */
+    transform: rotate(-55deg);
+}
+nav .menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; /* Заставляем меню занимать всё свободное пространство между логотипом и кнопкой */
+    list-style: none;
+    gap: 20px; /* Расстояние между элементами меню */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+nav a {
+    color: #000000; 
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 18px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    &:hover {
+        color: #FF4500; /* Более насыщенный оттенок при наведении */
+        transform: scale(1.1);
+    }
+}
+nav li {
+        margin: 0;
+    }
+nav .order-button {
+    margin-left: auto;
+}
+nav .order-button button {
+    background-color: #ff8b13;
+    color: white;
+    border: none;
+    padding: 20px 28px;
+    border-radius: 33px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    &:hover {
+        background-color: #FF4500;
+        transform: scale(1.05);
+    }
+}
+
+
+
+
+/* Добавим отступ сверху для контента, чтобы меню не перекрывало */
+section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 100px 20px 120px 20px;
+    margin-top: 80px; /* Раньше был отступ 80px, теперь он будет компенсирован фиксированным меню */
+}
+#advantages, #about {
+    margin-top: 0;
+}
+
+/* Блок "О нас" */
+.about {
+    background-color: #FFFFFF;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        font-size: 35px;
+    }
+}
+
+.about-container {
+    max-width: 800px;
+    background: linear-gradient(to right, #000000, #5c0000);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+.about img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* Бегущая строка */
+.advantages {
+    background-color: #FFEFD5;
+    padding: 10px 0;
+    width: 100%; /* Устанавливаем ширину для контейнера */
+}
+
+.marquee {
+    width: 3000px;
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite; /* Устанавливаем время анимации */
+}
+
+.marquee p {
+    display: inline-block;
+    font-size: 30px;
+    color: #FF6347;
+    font-weight: bold;
+    padding-right: 50px; /* Увеличиваем отступ, чтобы текст не касался края */
+}
+
+/* Анимация прокрутки */
+@keyframes scroll {
+    0% {
+        transform: translateX(100%); /* Начинаем с правой стороны */
+    }
+    100% {
+        transform: translateX(-100%); /* Заканчиваем на левой */
+    }
+}
+
+.pizza-block {
+    flex: 0 0 calc(26.33% - 13px);
+    margin: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        pointer-events: none;
+    }
+}
+
+.pizza-block:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #c70039, #8e0614);
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    z-index: -1;
+    border-radius: 8px;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.pizza-block:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.pizza-block:hover:before {
+    transform: rotate(42deg);
+}
+
+.pizza-block:hover h2 {
+    color: #ffd700;
+}
+
+.pizza-block h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+    text-align: center;
+}
+
+.pizza-img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.pizza-block p {
+    color: #666;
+    text-align: center;
+}
+
+.news-section {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.news-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.news-item {
+    flex: 0 0 20%; /* Каждый блок занимает 24% ширины контейнера */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: space-between; /* Выравниваем содержимое по вертикали */
+}
+
+.news-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.news-item h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+    min-height: 56px; /* Устанавливаем одинаковую высоту для заголовка */
+}
+
+.news-item .news-date {
+    font-size: 14px;
+    color: #888;
+    margin: 5px 0;
+    min-height: 20px; /* Устанавливаем одинаковую высоту для даты */
+}
+
+.news-item p {
+    font-size: 16px;
+    color: #555;
+    min-height: 60px;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .news-item {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .news-item {
+        flex: 0 0 100%;
+    }
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px; /* Добавляем отступ сверху */
+    margin-top: 0;
+}
+  
+.reviews h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+  
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 90%; /* Контейнер занимает 90% ширины экрана */
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    margin: 0 auto;
+}
+  
+.review-card {
+    flex: 1 1 calc(25% - 40px); /* 4 карточки в строке с учетом gap */
+    max-width: calc(25% - 40px); /* Ограничиваем ширину карточек */
+    height: 250px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+  
+.review-card:hover .card-inner {
+    transform: rotateY(180deg); /* Вращение на 180 градусов */
+}
+  
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Скрытие задней стороны */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+  
+.card-front {
+    background: #fff;
+}
+
+.card-front img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+  
+.card-front h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-back {
+    background: linear-gradient(145deg, #ffdd00, #ff9900);
+    color: #fff;
+    transform: rotateY(180deg);
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.contacts {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contacts h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    color: #000;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-map iframe {
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Футер */
+.footer {
+    background: linear-gradient(to right, #000000, #5c0000);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.footer-menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-menu li a:hover {
+    color: #ff9900;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+  
+  
+  
+
+/* footer {
+    background: linear-gradient(to right, #000000, #5c0000);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+} */
+
